@@ -1,0 +1,116 @@
+ဒီနေ့ ရက် ၃ မှာ Linux OS ရဲ့ ဖိုင်/ဖိုလ်ဒါ Permission စနစ် နဲ့ ပိုင်ရှင်ပြောင်းခြင်း ကို လေ့လာပါမယ်။
+ဒီအရာတွေကို နားလည်ရင် စနစ်ကို လုံခြုံစွာ ထိန်းချုပ်နိုင်ပါတယ်။
+
+✅ ရက် ၃ - ဖိုင် Permission နဲ့ ပိုင်ရှင်ပြောင်းခြင်း (chmod, chown)
+၁။ Linux မှာ Permission ဆိုတာဘာလဲ?
+Linux OS မှာ ဖိုင်/ဖိုလ်ဒါတိုင်းဟာ ယူဇာတစ်ယောက်နှင့် ဂရုပ်တစ်ခုရဲ့ ပိုင်ဆိုင်မှု (ownership) အောက်မှာရှိပါတယ်။
+ဖိုင်တစ်ခုကို ဘယ်သူဖတ်လို့ရမလဲ၊ ရေးလို့ရမလဲ၊ လုပ်ဆောင်လို့ရမလဲ ဆိုတာကို permission ပေးထားပါတယ်။
+
+၂။ Permission အမျိုးအစားများ
+Linux permission တွေကို User (u), Group (g), Others (o) ဆိုပြီး သုံးပိုင်းခွဲတယ်။
+
+အမျိုးအစား	အကြောင်းအရာ	အညွှန်း
+r	read – ဖတ်ခွင့်	ဖိုင်ဖတ်နိုင်ခြင်း
+w	write – ရေးခွင့်	ဖိုင်ကို ပြင်နိုင်/ဖျက်နိုင်ခြင်း
+x	execute – အလုပ်လုပ်ခွင့်	ဖိုင်ကို program အဖြစ် run လုပ်နိုင်ခြင်း
+
+၃။ ဖိုင် Permission ကြည့်နည်း
+bash
+Copy
+Edit
+ls -l filename
+ဥပမာ:
+
+bash
+Copy
+Edit
+-rw-r--r-- 1 mhs users 123 Jun 10 10:00 example.txt
+ဒီလိုနည်းနဲ့ဖတ်ပါ:
+
+-rw-r--r-- → permission
+
+ပထမ rw- → owner (user): read + write
+
+ဒုတိယ r-- → group: read only
+
+တတိယ r-- → others: read only
+
+၄။ chmod – Permission ပြောင်းခြင်း
+Format ၁: Symbolic Mode
+bash
+Copy
+Edit
+chmod u+x script.sh    # user ကို execute ခွင့်ပေး
+chmod g-w file.txt     # group ကို write ခွင့်ဖယ်
+chmod o=r file.txt     # others ကို read only ခွင့်ပေး
+Format ၂: Numeric Mode
+rwx	Value
+r--	4
+-w-	2
+--x	1
+rw-	6
+rwx	7
+
+ဥပမာ:
+
+bash
+Copy
+Edit
+chmod 755 file.sh   # u=rwx (7), g=rx (5), o=rx (5)
+chmod 644 file.txt  # u=rw (6), g=r (4), o=r (4)
+၅။ chown – ပိုင်ရှင်ပြောင်းခြင်း
+Format:
+
+bash
+Copy
+Edit
+chown newuser file.txt
+chown newuser:newgroup file.txt
+ဥပမာ:
+
+bash
+Copy
+Edit
+chown john file.txt              # file.txt ကို john သို့ပိုင်စေ
+chown john:developers file.txt  # user:group ပြောင်း
+📌 sudo သုံးဖို့ လိုပါလိမ့်မယ် (root access)
+
+၆။ လက်တွေ့ လေ့ကျင့်ရန် (Practice)
+bash
+Copy
+Edit
+touch myfile.txt
+ls -l myfile.txt
+
+chmod 744 myfile.txt      # user: rwx, group: r, others: r
+ls -l myfile.txt
+
+chmod u-x myfile.txt      # user မှ execute ခွင့်ဖယ်
+ls -l myfile.txt
+
+sudo chown $USER myfile.txt      # ပိုင်ရှင်ကို မိမိ user ပြောင်း
+sudo chown $USER:$USER myfile.txt
+ls -l myfile.txt
+🔐 အသုံးဝင်တဲ့ chmod ဥပမာများ
+Command	သုံးစွဲမှု
+chmod 777 file	တစ်ယောက်မက အားလုံး rwx ပါ (အန္တရာယ်ရှိ)
+chmod 644 file	user rw, group & others r
+chmod 600 file	user rw only (လျှို့ဝှက်ဖိုင်များတွင်သုံးတတ်)
+
+📝 Tip: Directory permission
+ဖိုင်တွေအတွက် x က execute ဖြစ်ပေမယ့်
+ဖိုလ်ဒါအတွက် x သည် ထဲကိုဝင်ခွင့် ဖြစ်ပါတယ်။
+
+bash
+Copy
+Edit
+chmod 700 myfolder     # owner ကိုသာ ဝင်ခွင့်ရှိ
+🔚 မိတ်ဆွေသိထားသင့်တာများ
+Linux မှာ ဖိုင်များကို permission ဖြင့် ကောင်းကောင်းထိန်းချုပ်တယ်။
+
+chmod နဲ့ ဖိုင်ရဲ့ access level ပြောင်းလို့ရတယ်။
+
+chown နဲ့ ဖိုင်ပိုင်ရှင်ပြောင်းလို့ရတယ်။
+
+ls -l က သုံးစွဲမှုအများဆုံး command တစ်ခုပါ။
+
