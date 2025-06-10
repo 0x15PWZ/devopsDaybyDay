@@ -1,0 +1,103 @@
+ဒီနေ့ ရက် ၄ မှာတော့ Linux OS မှာ အသုံးပြုနိုင်တဲ့ Text Editors နှစ်ခုဖြစ်တဲ့ nano နဲ့ vim ကို အခြေခံအနေဖြင့် သင်ကြားပေးပါမယ်။
+ဒီ tools ၂ ခုက Command Line Interface (CLI) ထဲမှာ ဖိုင်ရေးဖို့၊ ပြင်ဖို့အတွက် အရေးကြီးဆုံး editor tools တွေ ဖြစ်ပါတယ်။
+
+✅ ရက် ၄ – Text Editors (nano, vim) အသုံးပြုခြင်း
+၁။ nano – Beginner Friendly Editor
+nano သည် CLI မှာ အရမ်းလွယ်ပြီး လေ့လာဖို့လည်း အဆင်ပြေတဲ့ text editor တစ်ခုဖြစ်ပါတယ်။
+
+✔ nano အသုံးပြုနည်း
+bash
+Copy
+Edit
+nano filename.txt
+✔ အသုံးဝင်သော Shortcut Keys
+Shortcut	Description
+Ctrl + O	Save the file (write out)
+Enter	Confirm filename
+Ctrl + X	Exit nano
+Ctrl + K	Cut line
+Ctrl + U	Paste line
+Ctrl + W	Search
+
+✔ လေ့ကျင့်ကြည့်ရအောင်
+bash
+Copy
+Edit
+nano mynote.txt
+စာရေးပါ → "Hello from nano!"
+
+Ctrl + O → Save
+
+Enter
+
+Ctrl + X → Quit
+
+၂။ vim – Powerful but Requires Practice
+vim သည် professional developer တွေကြားမှာအထင်ကြီးပြီး နည်းနည်းကျွမ်းကျင်ဖို့ လိုပါတယ်။
+Command Mode, Insert Mode, Visual Mode ဆိုပြီး mode ၃ မျိုးရှိပါတယ်။
+
+✔ vim Modes
+Mode	Description
+Command Mode	Default mode – အမိန့်ရိုက်ရမယ်
+Insert Mode	စာရိုက်ဖို့
+Visual Mode	စာရွေးချယ်ဖို့
+
+✔ vim အသုံးပြုနည်း
+bash
+Copy
+Edit
+vim filename.txt
+ဖွင့်ပြီးတဲ့နောက်...
+
+i → Insert mode (စာရိုက်လို့ရ)
+
+စာရိုက်ပြီးရင် Esc နဲ့ပြန်ထွက်
+
+:w → Save
+
+:q → Quit
+
+:wq → Save & Quit
+
+:q! → Quit without saving
+
+✔ လေ့ကျင့်ကြည့်ရအောင်
+bash
+Copy
+Edit
+vim vimfile.txt
+i နှိပ်ပြီး – "This is from vim"
+
+Esc → ပြန်ထွက်
+
+:wq → Save & Quit
+
+📝 အသေးစိတ် Tips
+Command	Description
+:set number	Show line numbers
+u	Undo
+dd	Delete line
+yy	Copy line
+p	Paste line
+
+📌 Vim ကို လေ့ကျင့်ဖို့ Terminal မှာ
+
+bash
+Copy
+vimtutor
+ဆိုပြီး ရိုက်ပါ – ကိုယ့်ကိုယ်ကို သင်ကြားနိုင်ပါတယ်။
+
+✅ nano vs vim နှိုင်းယှဉ်
+Feature	nano	vim
+လွယ်ကူမှု	အလွန်လွယ်	အတော်လေးခက်
+Feature	အနည်း	အများကြီး
+အသုံးပြုသူ	Beginner	Intermediate to Pro
+Speed	ပျမ်းမျှ	အလွန်လျှင်မြန်
+
+🔚 တင်ပြချက်အနှစ်ချုပ်
+nano ကို သင်ရိုးသင်ကြားမှုအတွက် စတင်အသုံးပြုရန် အကြံပြုပါတယ်။
+
+vim ကိုကျွမ်းကျင်လာတဲ့အခါအသုံးပြုဖို့ သင်ယူရပါမယ်။
+
+CLI မှာဖိုင်ဖတ်၊ ရေး၊ ပြင်ဖို့ editor ၂ ခုစလုံးက အရေးကြီးပါတယ်။
+
