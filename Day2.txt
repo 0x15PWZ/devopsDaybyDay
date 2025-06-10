@@ -1,0 +1,82 @@
+ဒီနေ့ ရက် ၂ မှာတော့ Linux ရဲ့ ဖိုင်စနစ် ဖွဲ့စည်းပုံ (File System Hierarchy) နဲ့ ဖိုင်/ဖိုလ်ဒါတွေကို မိတ္တူကူးခြင်း (cp)၊ ရွှေ့ခြင်း (mv)၊ ဖျက်ခြင်း (rm)၊ ဖန်တီးခြင်း (mkdir) တို့ကို လေ့လာပါမယ်။
+
+✅ ရက် ၂ - ဖိုင်စနစ် ဖွဲ့စည်းပုံ၊ ဖိုင်လုပ်ဆောင်ချက်များ (cp, mv, rm, mkdir)
+၁။ Linux File System Hierarchy (ဖိုင်စနစ် ဖွဲ့စည်းပုံ)
+Linux မှာ အရာအားလုံးက root directory / ထဲမှာ စတင်ပါတယ်။
+အောက်ပါမှာ သိထားသင့်တဲ့ အဓိက directory များနဲ့ အသုံးအဆောင်ဖော်ပြထားပါတယ်။
+
+Directory	အဓိပ္ပါယ်
+/	Root directory - အကြီးဆုံး မိခင် directory
+/home	အသုံးပြုသူတွေရဲ့ personal folder များရှိရာနေရာ (/home/yourname)
+/etc	System settings/config files များ
+/bin	Binary files (command files like ls, cp, mv etc.)
+/var	Variable files (log files, spool files etc.)
+/tmp	ယာယီ ဖိုင်များ ထားရာနေရာ
+/usr	Software packages နဲ့ user files
+/root	root user ရဲ့ home directory
+/dev	Device files (hardware representation)
+
+📌 သတိထား! Windows မှာ C:\, D:\ လို့ drive-based ဖြစ်ပြီး၊ Linux မှာတော့ တစ်ခုတည်းသော root tree / ထဲမှာပဲ အကုန်သွားပါသည်။
+
+၂။ ဖိုင်နှင့်ဖိုလ်ဒါ အသုံးပြု Command များ
+✅ cp – မိတ္တူကူးခြင်း (copy)
+bash
+Copy
+Edit
+cp source_file.txt destination_file.txt
+cp source_file.txt /home/yourname/Desktop/
+Directory တစ်ခုလုံးကူးချင်ရင် -r option ထည့်ရန်
+
+bash
+Copy
+Edit
+cp -r folder1/ folder2/
+✅ mv – ရွှေ့ခြင်း သို့မဟုတ် အမည်ပြောင်းခြင်း
+bash
+Copy
+Edit
+mv oldname.txt newname.txt               # ဖိုင်အမည်ပြောင်း
+mv file.txt /home/yourname/Documents/   # ဖိုင်တစ်ခုကိုအခြားနေရာရွှေ့
+✅ rm – ဖျက်ခြင်း (remove)
+bash
+Copy
+Edit
+rm filename.txt            # ဖိုင်ဖျက်
+rm -r foldername/          # Folder တစ်ခုလုံးဖျက်
+rm -rf foldername/         # သတိမထားဘဲအကုန်ဖျက် (အရေးကြီး)
+❗ သတိထားပါ – rm -rf သည် အရမ်းအန္တရာယ်ရှိသည်။ ထိန့်ချင်မှသာသုံးပါ။
+
+✅ mkdir – ဖိုလ်ဒါအသစ်ဖန်တီးခြင်း
+bash
+Copy
+Edit
+mkdir new_folder
+mkdir -p parent_folder/child_folder   # Sub-folder အထိတပြိုင်နက်ဖန်တီးနိုင်
+၃။ လုပ်ဆောင်ရန် (Hands-on Practice)
+Terminal ထဲမှာ အောက်ပါ command များကို စမ်းသပ်လုပ်ကြည့်ပါ။
+
+bash
+Copy
+Edit
+mkdir myfolder
+cd myfolder
+touch file1.txt
+cp file1.txt file2.txt
+mv file2.txt newname.txt
+rm newname.txt
+cd ..
+rm -r myfolder
+၄။ နောက်ထပ် အသုံးဝင်သော Option များ
+Command	Option	အဓိပ္ပါယ်
+cp	-r	Directory တစ်ခုလုံးကူးရန်
+rm	-r	Directory ဖျက်ရန်
+rm	-f	Confirm မမေးပဲဖျက်
+mkdir	-p	Parent directory မရှိလျှင် auto ဖန်တီး
+
+✅ သင်ခန်းစာသိသင့်သောအချက်
+Linux မှာ ဖိုင်တွေ၊ ဖိုလ်ဒါတွေကို Terminal မှတဆင့်အထိအထိထိန်းချုပ်လို့ရတယ်။
+
+Command line မှာ အသုံးပြုတဲ့ command တွေက GUI ထက် မြန်မြန်ဆန်ဆန်လုပ်ဆောင်လို့ရတယ်။
+
+လုပ်ပြီးတာနဲ့ ls နဲ့ စစ်ကြည့်တာ မမေ့နဲ့နော်။
+
