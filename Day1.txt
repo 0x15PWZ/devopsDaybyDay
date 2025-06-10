@@ -1,0 +1,133 @@
+Linux Fundamentals (ရက် ၁)
+အကြောင်းအရာ
+Linux ဆိုတာဘာလဲ?
+
+Linux Distribution များ (Ubuntu, CentOS, Debian, Fedora)
+
+Linux OS သုံးရန် လိုအပ်တဲ့ software နှင့် virtual machine setup
+
+အပိုင်း ၁ - Linux introduction
+Linux ဆိုတာဘာလဲ?
+Linux သည် open source operating system (OS) တစ်ခုဖြစ်ပြီး server, desktop နှင့် embedded system များတွင် အသုံးပြုကြသည်။ Windows နဲ့ MacOS ကဲ့သို့ OS တစ်ခုဖြစ်ပြီး ကွန်ပျူတာ hardware ကိုထိန်းချုပ်ရန်အတွက် software အမျိုးအစားတစ်ခုဖြစ်ပါတယ်။
+
+Linux Distribution များ
+Linux က စတင်ဖြန့်ချိခဲ့သူ Linus Torvalds မှ kernel ကို တည်ဆောက်ခဲ့ပြီး သူ့အပေါ် အခြေခံပြီး အမျိုးမျိုးသော “distribution” များ (Ubuntu, CentOS, Debian, Fedora စသည်) တည်ဆောက်ဖြန့်ချိကြသည်။ အချို့က desktop ပိုသင့်တော်ပြီး အချို့က server ပိုသင့်တော်သည်။
+
+အပိုင်း ၂ - Linux ကို သုံးရန် Software များ
+မိတ်ဆွေ Windows သုံးရင် VirtualBox, VMware ကဲ့သို့ virtual machine အစီအစဉ်တစ်ခု ထည့်သွင်းပြီး Ubuntu Desktop သို့ CentOS တို့ကို တပ်ဆင် သုံးနိုင်ပါသည်။
+
+လုပ်ဆောင်ရန်
+VirtualBox ကို https://www.virtualbox.org မှာ download လုပ်
+
+Ubuntu ISO ဖိုင်ကို https://ubuntu.com/download/desktop မှာ download လုပ်
+
+VirtualBox မှာ VM အသစ် ဖန်တီးပြီး Ubuntu ကို install လုပ်ပါ။
+
+အပိုင်း ၃ - လုပ်ဆောင်ချက်
+Step 1: VirtualBox 설치 및 설치 안내 (မိတ်ဆွေရဲ့ OS အပေါ်မူတည်ပြီး)
+Step 2: Ubuntu ISO download
+Step 3: VirtualBox မှာ VM ဖန်တီးပြီး Ubuntu install
+Step 4: Ubuntu VM သတင်းအချက်အလက်ဖြင့် log in
+
+အပိုင်း ၄ - အခြေခံ Command များ
+Linux shell (terminal) မှာ command များကို ဖြတ်တောက်အသုံးပြုပြီး system ကို ထိန်းချုပ်နိုင်သည်။
+
+အကြောင်းအရာများ -
+
+pwd - current directory ကိုပြ
+
+ls - directory content ကြည့်
+
+cd - directory ပြောင်း
+
+mkdir - directory ဖန်တီး
+
+touch - file ဖန်တီး
+
+rm - ဖိုင်ဖျက်
+
+လုပ်ဆောင်ရန်
+Terminal ဖွင့်ပြီး အောက်ပါ command များ ရိုက်ထည့်ကြည့်ပါ -
+
+bash
+Copy
+Edit
+pwd
+ls
+mkdir test_folder
+cd test_folder
+touch test_file.txt
+ls
+rm test_file.txt
+cd ..
+rmdir test_folder
+ဒီနေ့မှာ ဒီအထိ လေ့လာပြီး အနာဂတ် ရက်တွေမှာ commands တွေ ပိုများလာအောင် လေ့ကျင့်မယ်နော်။
+
+ဘာဖြစ်ရင်မေးနိုင်ပါတယ်။ မိတ်ဆွေ ဘယ်လို OS သုံးနေသလဲ၊ VirtualBox setup လုပ်လိုလား၊ တကယ် Linux VM တပ်ဆင်ပြီးသွားပြီလား သိလိုပါတယ်။
+
+စပြီးသွားပါစို့!
+
+
+
+
+
+
+
+
+You said:
+Start from ရက် ၁ - Linux OS နဲ့ distros များအကြောင်း၊ အခြေခံ command များ (ls, cd, pwd).
+
+
+ChatGPT said:
+ကောင်းပါတယ်! ရက် ၁ အတွက် Linux OS နဲ့ distros များအကြောင်းနဲ့ အခြေခံ command များကို မြန်မာလို အဆင်ပြေပြေရှင်းပြပေးပါမယ်။
+
+ရက် ၁ - Linux OS နဲ့ Distros များ၊ အခြေခံ Command များ
+၁။ Linux ဆိုတာဘာလဲ?
+Linux သည် Operating System (OS) တစ်ခုဖြစ်ပြီး ကွန်ပျူတာ hardware တွေကို ထိန်းချုပ်ပေးတယ်။
+Windows နဲ့ MacOS တွေလို OS ဖြစ်ပေမယ့် Open Source ဖြစ်ပြီး၊ အများသုံးဖို့အတွက် အခမဲ့ဖြန့်ဝေပါတယ်။
+Linux ရဲ့ အဓိက kernel ကို Linus Torvalds ဆိုသူက 1991 ခုနှစ်မှာဖန်တီးခဲ့ပါတယ်။
+
+၂။ Linux Distribution (Distros) ဆိုတာဘာလဲ?
+Linux kernel ကို အခြေခံပြီး ထပ်မံတိုးချဲ့ထားတဲ့ Operating System များကို Linux Distribution လို့ခေါ်ပါတယ်။
+ထို Distros များမှာ အထူးသဖြင့် စနစ်ဖွဲ့စည်းပုံ၊ စနစ်မှတ်တမ်းများ (package managers), graphical interface များ အထူးပြုထားတာကွဲပြားတယ်။
+အများဆုံးသုံးတဲ့ Distros တွေက -
+
+Distribution	သုံးစွဲသင့်သောနေရာ	특징 (Features)
+Ubuntu	Desktop, Server	User-friendly, Beginner Friendly, Large Community
+CentOS	Server	Stable, Enterprise-grade, Long-term support
+Debian	Server, Desktop	Stable, Large repository, Community driven
+Fedora	Desktop	Cutting-edge features, Latest software
+
+၃။ Linux Terminal နဲ့ အခြေခံ Command များ
+Linux OS ရဲ့ အဓိကအားကောင်းချက်တစ်ခုက Command Line Interface (CLI) ပါ။ Terminal ဖြင့် command များရိုက်ထည့်ကာ system ကို ထိန်းချုပ်နိုင်ပါတယ်။
+
+အခြေခံ Command ၃ မျိုး
+Command	သုံးပုံ	ဥပမာ
+pwd	Current directory (working directory) ကိုပြတယ်	pwd → /home/username
+ls	Directory ထဲမှာရှိတဲ့ file နှင့် folder များကိုပြတယ်	ls → Documents Downloads Desktop
+cd	Directory တစ်ခုခုထဲသို့ဝင်သွားရန်အသုံးပြုသည်	cd Documents → Documents folder ကိုဝင်သည်
+
+နမူနာ Command များ
+bash
+Copy
+Edit
+pwd              # လက်ရှိ directory ကိုပြမယ်
+ls               # လက်ရှိ directory ထဲဖိုင်တွေအားလုံးကိုပြမယ်
+cd Documents     # Documents folder ထဲသို့ဝင်မယ်
+ls               # Documents folderထဲရှိဖိုင်တွေကိုပြမယ်
+cd ..            # အရင် directory (parent directory) သို့ပြန်ထွက်မယ်
+pwd              # Directory လက်ရှိနေရာကိုပြမယ်
+၄။ လုပ်ဆောင်ရန် (Hands-on)
+Terminal သို့မဟုတ် Command Line Interface ကိုဖွင့်ပြီး အောက်ပါ commands များကို တစ်ကြိမ်တစ်ကြိမ် ရိုက်ထည့် ကြည့်ပါ။
+
+bash
+Copy
+Edit
+pwd
+ls
+cd ..
+ls
+သင့်မှာ Virtual Machine သို့မဟုတ် Linux OS တပ်ဆင်ထားပြီးဆိုရင် Terminal ဖြင့် လေ့ကျင့်နိုင်ပါတယ်။
+မရှိသေးရင် ပြောပါ၊ setup လုပ်ပုံကိုလည်း လမ်းညွှန်ပေးပါမယ်။
+
+
