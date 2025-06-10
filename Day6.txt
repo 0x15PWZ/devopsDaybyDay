@@ -1,0 +1,83 @@
+ဒီနေ့ ရက် ၆ မှာတော့ Linux OS ထဲက အရေးကြီးတဲ့ system concept တစ်ခုဖြစ်တဲ့ Process Management ကို သင်ကြားသွားမှာဖြစ်ပါတယ်။
+System administrator ဖြစ်ချင်သူတိုင်း သိထားဖို့ အရေးကြီးပါတယ်။
+
+✅ ရက် ၆ – Process Management (ps, top, kill)
+🧠 Process ဆိုတာဘာလဲ?
+Process ဆိုတာ သင်ရိုက်လိုက်တဲ့ program (ex: Firefox, Terminal, Python) တစ်ခုချင်းစီရဲ့ လုပ်ဆောင်နေတဲ့ state တစ်ခုပါ။
+Linux system မှာ process တစ်ခုစလုံးဟာ unique PID (Process ID) ရှိပါတယ်။
+
+🛠️ ၁။ ps – Process Snapshot
+bash
+Copy
+Edit
+ps
+နေရာမပြောင်းပဲ run နေတဲ့ process များကို မြင်နိုင်သည်။
+
+bash
+Copy
+Edit
+ps aux
+Column	အဓိပ္ပာယ်
+USER	ဘယ် user မှ run လဲ
+PID	Process ID
+%CPU	CPU usage
+%MEM	Memory usage
+COMMAND	ဘယ် command မှ run လဲ
+
+✔ နမူနာ
+bash
+Copy
+Edit
+ps aux | grep firefox
+➡ Firefox process ကိုရှာ
+
+📊 ၂။ top – Real-Time Process Monitor
+bash
+Copy
+Edit
+top
+System resources တွေ (CPU, RAM, Process) ကို real-time ပြထားတယ်။
+
+Key	Function
+q	quit
+k	kill process
+P	sort by CPU usage
+M	sort by memory usage
+
+✔ အဆင်ပြေတဲ့ htop
+bash
+Copy
+Edit
+sudo apt install htop
+htop
+➡ top ထက်လွယ်ကူပြီး အရောင်နဲ့ UI ကောင်းတယ်။
+
+❌ ၃။ kill – Process တစ်ခုကိုဖျက်
+bash
+Copy
+Edit
+kill PID
+➡ PID ကို ps သို့မဟုတ် top မှာကြည့်ပြီး ဖြုတ်
+
+✔ Stronger kill
+bash
+Copy
+Edit
+kill -9 PID
+➡ Normal kill မအောင်မြင်ရင် -9 သုံး
+
+🧪 လေ့ကျင့်စရာ
+ps aux သုံးပြီး system မှာ run နေတဲ့ process တွေကြည့်ပါ။
+
+Firefox (သို့) Terminal process ရှာဖွေပါ။
+
+kill သုံးပြီး process တစ်ခုဖျက်ကြည့်ပါ။
+
+top နဲ့ CPU ပိုသုံးတဲ့ process တွေကြည့်ပါ။
+
+📌 အနှစ်ချုပ်
+Command	အလုပ်
+ps	Running process list ကို static ပြသ
+top	Real-time process viewer
+kill	Process ကိုပိတ်
+
