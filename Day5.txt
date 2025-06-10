@@ -1,0 +1,118 @@
+ဒီနေ့ ရက် ၅ မှာတော့ Linux OS ထဲမှာ
+✅ ဖိုင်ရှာဖွေရေး commands (grep, find, head, tail, cat, more, less)
+နဲ့
+✅ Shell Scripting မိတ်ဆက်
+၂ ခုကို အခြေခံအဆင့်အထိ လေ့လာသွားမှာဖြစ်ပါတယ်။
+
+✅ ရက် ၅ – ဖိုင်ရှာဖွေရေး + Shell Script မိတ်ဆက်
+🧭 ၁။ ဖိုင်ရှာဖွေရေး Commands
+🔍 grep – စာသားကိုဖိုင်ထဲကနေ ရှာ
+bash
+Copy
+Edit
+grep "hello" filename.txt
+filename.txt ထဲမှာ "hello" ဆိုတဲ့ စာသားပါလာတဲ့လိုင်းတွေကိုပြတယ်။
+
+✔ Options
+bash
+Copy
+Edit
+grep -i "word" file.txt   # case insensitive
+grep -r "word" folder/    # recursive
+grep -n "word" file.txt   # show line number
+🔍 find – ဖိုင်တွေကို system မှာရှာ
+bash
+Copy
+Edit
+find /path -name "filename.txt"
+အဆိုပါ path အောက်ကနေ ဖိုင်နာမည်ကိုရှာတယ်
+
+✔ ဥပမာ
+bash
+Copy
+Edit
+find /home -name "*.txt"
+/home အောက်က .txt ဖိုင်အားလုံးကိုရှာမယ်။
+
+📖 head / tail – ဖိုင်ရဲ့ ပထမပိုင်း / နောက်ဆုံးပိုင်း
+bash
+Copy
+Edit
+head file.txt
+tail file.txt
+-n နဲ့ line အရေအတွက် specify လုပ်လို့ရတယ်။
+
+bash
+Copy
+Edit
+head -n 5 file.txt
+tail -n 10 file.txt
+📘 cat, more, less – ဖိုင်ဖတ်ဖို့
+bash
+Copy
+Edit
+cat file.txt         # ဖိုင်အစအဆုံးဖတ်
+more file.txt        # step by step ဖတ် (space = next)
+less file.txt        # scrollable viewer
+📌 less ဟာ search (/keyword) လည်းလုပ်လို့ရတယ်။
+
+🐚 ၂။ Shell Scripting မိတ်ဆက်
+💡 Shell Script ဆိုတာဘာလဲ?
+Shell Script ဆိုတာ Linux commands တွေကို စုစည်းရေးထားတဲ့ ဖိုင်တစ်ခုဖြစ်ပြီး .sh extension ရှိတတ်ပါတယ်။
+
+🛠️ Script တစ်ခုရေးခြင်း
+ဖိုင်ဖန်တီး
+
+bash
+Copy
+Edit
+nano hello.sh
+အောက်ပါအတိုင်းရေး
+
+bash
+Copy
+Edit
+#!/bin/bash
+echo "Hello, Linux world!"
+File ကို executable လုပ်
+
+bash
+Copy
+Edit
+chmod +x hello.sh
+Run လုပ်
+
+bash
+Copy
+Edit
+./hello.sh
+👉 Output: Hello, Linux world!
+
+🧪 Variables, Input, Conditional တို့နဲ့ နမူနာ script
+bash
+Copy
+Edit
+#!/bin/bash
+echo "နာမည်ရေးပါ:"
+read name
+echo "မင်္ဂလာပါ $name"
+🧠 သင်သိသင့်တဲ့ Keywords
+Syntax	Description
+#!/bin/bash	script header
+echo	output
+read	input
+if, then, else	condition
+for, while	loops
+
+📝 လေ့ကျင့်ဖို့ မေးခွန်းများ
+ကိုယ့် home folder အောက်က .log ဖိုင်တွေကို find နဲ့ရှာပါ။
+
+grep သုံးပြီး ဖိုင်ထဲက "error" ဆိုတဲ့စာကို ရှာပါ။
+
+shell script တစ်ခုရေးပြီး date command နဲ့ ယနေ့ရက်စွဲကို output ပြပါ။
+
+📌 အနှစ်ချုပ်
+grep, find, head, tail, cat, more, less တို့က daily CLI usage မှာ အရေးကြီး tools များ။
+
+Shell Script ဆိုတာ command များစုစည်းထားတဲ့ ဖိုင်ဖြစ်ပြီး လုပ်ငန်း automate လုပ်ဖို့ အသုံးများတယ်။
+
